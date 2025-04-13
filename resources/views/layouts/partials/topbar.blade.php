@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
   <div class="container">
     <a class="navbar-brand d-inline-flex" href="{{ url('/site') }}">
-      <img class="d-inline-block" src="assets/img/gallery/logo.svg" alt="logo" />
+      <img class="d-inline-block" src="{{ asset('assets/img/gallery/logo.svg') }}" alt="logo" />
       <span class="text-1000 fs-3 fw-bold ms-2 text-gradient">Irukka?</span>
     </a>
 

@@ -18,7 +18,8 @@
             <div class="d-flex align-items-center">
                 <!-- Left Side: Shop Banner -->
                 <div class="flex-shrink-0">
-                    <img src="data:image/png;base64,{{ $shop->details->banner_img }}" alt="Shop Banner" class="rounded-start"
+                    <img src="{{ $shop->details->banner_img ? 'data:image/png;base64,' . $shop->details->banner_img : asset('assets/img/gallery/default_banner.png') }}"
+                        alt="Shop Banner" class="rounded-start"
                         style="width: 80px; height: 80px; border-top-left-radius: 15px; border-bottom-left-radius: 15px;">
                 </div>
 

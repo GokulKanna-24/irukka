@@ -76,14 +76,16 @@
         <div class="card shop-card h-100 rounded-3">
             <!-- Shop Banner Image -->
             <div class="banner-container">
-                <img class="img-fluid shop-banner" src="data:image/png;base64,{{ $shop->details->banner_img }}" alt="Shop Banner" />
+                <img class="img-fluid shop-banner" 
+                src="{{ $shop->details->banner_img ? 'data:image/png;base64,' . $shop->details->banner_img : asset('assets/img/gallery/default_banner.png') }}" 
+                alt="Shop Banner" />
             </div>
 
             <!-- Card Body -->
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <!-- Logo -->
-                    <img class="shop-logo" src="data:image/png;base64,{{ $shop->details->logo_img }}" alt="Shop Logo" />
+                    <img class="shop-logo" src="{{ $shop->details->logo_img ? 'data:image/png;base64,' . $shop->details->logo_img : asset('assets/img/gallery/default_logo.png') }}" alt="Shop Logo" />
 
                     <!-- Shop Info -->
                     <div class="ms-3">
@@ -177,26 +179,26 @@
         <div class="row">
           <div class="col-sm-6 col-md-3 mb-6">
             <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/location.png" height="112" alt="..." />
-              <h5 class="mt-4 fw-bold">Select location</h5>
-              <p class="mb-md-0">Choose the location where your food will be delivered.</p>
+              <h5 class="mt-4 fw-bold">Carving? Search it!</h5>
+              <p class="mb-md-0">Choose the location where your food spot is !</p>
             </div>
           </div>
           <div class="col-sm-6 col-md-3 mb-6">
             <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/order.png" height="112" alt="..." />
-              <h5 class="mt-4 fw-bold">Choose order</h5>
-              <p class="mb-md-0">Check over hundreds of menus to pick your favorite food</p>
+              <h5 class="mt-4 fw-bold">Open or Nah?</h5>
+              <p class="mb-md-0">check if it’s  open before stepping out!</p>
             </div>
           </div>
           <div class="col-sm-6 col-md-3 mb-6">
             <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/pay.png" height="112" alt="..." />
-              <h5 class="mt-4 fw-bold">Pay advanced</h5>
-              <p class="mb-md-0">It's quick, safe, and simple. Select several methods of payment</p>
+              <h5 class="mt-4 fw-bold">Get There Like a Boss</h5>
+              <p class="mb-md-0">Found your spot? let the feast begin!</p>
             </div>
           </div>
           <div class="col-sm-6 col-md-3 mb-6">
             <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/meals.png" height="112" alt="..." />
               <h5 class="mt-4 fw-bold">Enjoy meals</h5>
-              <p class="mb-md-0">Food is made and delivered directly to your home.</p>
+              <p class="mb-md-0">Your favorite food at your favorite spot!</p>
             </div>
           </div>
         </div>

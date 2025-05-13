@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AuthLayout from '@/layouts/auth-layout';
+import FloatingInput from '@/components/app-cus-float-input';
 
 type RegisterForm = {
     name: string;
@@ -35,27 +36,25 @@ export default function Register() {
         <AuthLayout title="Create an account" description="Enter your details below to create your account">
             <Head title="Register" />
             <form className="flex flex-col gap-6" onSubmit={submit}>
-                <div className="grid gap-6">
+                <div className="grid gap-3">
                     <div className="grid gap-2">
-                        <Label htmlFor="name">Name</Label>
-                        <Input
+                        <FloatingInput 
+                            label="Name"
                             id="name"
-                            type="text"
                             required
-                            autoFocus
                             tabIndex={1}
                             autoComplete="name"
+                            autoFocus
                             value={data.name}
                             onChange={(e) => setData('name', e.target.value)}
+                            error={errors.name}
                             disabled={processing}
-                            placeholder="Full name"
                         />
-                        <InputError message={errors.name} className="mt-2" />
                     </div>
 
                     <div className="grid gap-2">
-                        <Label htmlFor="email">Email address</Label>
-                        <Input
+                        <FloatingInput 
+                            label="Email address"
                             id="email"
                             type="email"
                             required
@@ -63,31 +62,29 @@ export default function Register() {
                             autoComplete="email"
                             value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
+                            error={errors.email}
                             disabled={processing}
-                            placeholder="email@example.com"
                         />
-                        <InputError message={errors.email} />
                     </div>
 
                     <div className="grid gap-2">
-                        <Label htmlFor="password">Password</Label>
-                        <Input
+                        <FloatingInput 
+                            label="Password"
                             id="password"
                             type="password"
                             required
                             tabIndex={3}
-                            autoComplete="new-password"
+                            autoComplete="password"
                             value={data.password}
                             onChange={(e) => setData('password', e.target.value)}
+                            error={errors.password}
                             disabled={processing}
-                            placeholder="Password"
                         />
-                        <InputError message={errors.password} />
                     </div>
 
                     <div className="grid gap-2">
-                        <Label htmlFor="password_confirmation">Confirm password</Label>
-                        <Input
+                        <FloatingInput 
+                            label="Confirm password"
                             id="password_confirmation"
                             type="password"
                             required
@@ -95,10 +92,9 @@ export default function Register() {
                             autoComplete="new-password"
                             value={data.password_confirmation}
                             onChange={(e) => setData('password_confirmation', e.target.value)}
+                            error={errors.password_confirmation}
                             disabled={processing}
-                            placeholder="Confirm password"
                         />
-                        <InputError message={errors.password_confirmation} />
                     </div>
 
                     <Button type="submit" className="mt-2 w-full" tabIndex={5} disabled={processing}>
